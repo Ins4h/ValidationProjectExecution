@@ -42,7 +42,6 @@ export const Form = () => {
         type: actionTypes.addMessage,
         message,
       });
-      alert("values added");
     } else {
       setFirstNameValidation(true);
       setLastNameValidation(true);
