@@ -1,0 +1,24 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  /* width: 400px; */
+  align-items: flex-start;
+}
+
+.label-container {
+  display: flex;
+  width: 100%;
+  /* justify-content: space-between; */
+  padding-bottom: 0.5rem;
+}
+
+.label {
+  text-align: left;
+  width: 100px;
+}
+
+.validation-message {
+  padding-left: 0.5rem;
+  color: red;
+}
