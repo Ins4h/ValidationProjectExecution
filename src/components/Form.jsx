@@ -3,7 +3,7 @@ import { store, actionTypes } from "../store";
 import validator from "validator";
 import "./styles.css";
 
-export const Form = () => {
+export const Form = ({ onSubmit = () => {} }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -23,6 +23,7 @@ export const Form = () => {
     const isMessage = message.length > 10;
 
     if (isFirstName && isLastName && isEmail && isMessage) {
+      onSubmit();
       store.dispatch({
         type: actionTypes.addFirstName,
         firstName,
@@ -51,7 +52,7 @@ export const Form = () => {
   };
 
   return (
-    <form className="form-container" onSubmit={handleSubmit}>
+    <form className="form-container" name="messageForm" onSubmit={handleSubmit}>
       <label className="label-container">
         <span className="label">First name: </span>
         <input
